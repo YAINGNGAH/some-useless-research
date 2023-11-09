@@ -5,7 +5,9 @@ import pandas as pd
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('META (1).csv', names=['Date','Open','High','Low','Close','Volume'], header=0)
+data = pd.read_csv('AAPL (2).csv', names=['Date','Open','High','Low','Close', 'Adj Close', 'Volume'], header=0)
+
+#calibrate for META
 #Augmented Dickey-Fuller Statistic: -1.235884
 #p-value: 0.657972 -> не статический d!=0
 
@@ -79,4 +81,5 @@ for i in range(1000, len(prediction)-1):
     #Меняем логику покупки
     long = (prediction[i+1] > data.Close[i])
 print(profit)
-#profit = 550.7058699979996
+#profit = 550.7058699979996 META
+#profit = 37 AAPL
