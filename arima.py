@@ -5,7 +5,7 @@ import pandas as pd
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('AAPL (2).csv', names=['Date','Open','High','Low','Close', 'Adj Close', 'Volume'], header=0)
+data = pd.read_csv('/./datasets/AAPL (2).csv', names=['Date','Open','High','Low','Close', 'Adj Close', 'Volume'], header=0)
 
 #calibrate for META
 #Augmented Dickey-Fuller Statistic: -1.235884
