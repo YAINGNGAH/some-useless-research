@@ -43,7 +43,17 @@ y_pred1 = classifier1.predict(X_test)
 
 print(classification_report(y_test, y_pred1))
 #Показатель accuracy получается равен примерно 0.5 для всех выбранных нами акций.
-#Более подробный вывод лежит в оверлифе
+#Ну что, порисуем красивые графики
+
+fpr, tpr, dontneed = roc_curve(y_test, y_pred1)
+plt.figure(figsize=(10, 8))
+plt.plot(fpr, tpr, label='ROC Curve')
+plt.plot([0, 1], [0, 1], '--', label='Random')
+plt.xlabel('FPR')
+plt.ylabel('TPR')
+plt.title('ROC Curve')
+plt.legend()
+plt.show()
 
 
 
